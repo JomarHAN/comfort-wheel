@@ -72,6 +72,8 @@
               {% include 'product-unit-price', variant: product.selected_or_first_available_variant %}
             {%- endif -%}
           </div>
+         
+
           {% if on_sale and section.settings.product_show_saved_amount %}
             <div class="sale-tag medium-down--right{% if section.settings.product_reviews_enable %} has-reviews{% endif %}">
               {% assign compare_price = product.compare_at_price %}
