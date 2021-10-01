@@ -28,9 +28,9 @@
                 <div class="grid">
                   <div class="grid-item one-third">
                     <div class="ajaxifyCart--qty">
-                      <input type="text" name="updates[]" class="ajaxifyCart--num" value="{{itemQty}}" min="0" data-line="{{line}}" aria-label="quantity" pattern="[0-9]*">
-                      <span class="ajaxifyCart--qty-adjuster ajaxifyCart--add" data-line="{{line}}" data-qty="{{itemAdd}}">+</span>
-                      <span class="ajaxifyCart--qty-adjuster ajaxifyCart--minus" data-line="{{line}}" data-qty="{{itemMinus}}">-</span>
+                      <input type="text" name="updates[]" class="ajaxifyCart--num" value="{{itemQty}}" min="0" data-line="{{line}}" aria-label="quantity" pattern="[0-9]*" readonly>
+                      <!-- <span class="ajaxifyCart--qty-adjuster ajaxifyCart--add" data-line="{{line}}" data-qty="{{itemAdd}}">+</span>
+                      <span class="ajaxifyCart--qty-adjuster ajaxifyCart--minus" data-line="{{line}}" data-qty="{{itemMinus}}">-</span> -->
                     </div>
                   </div>
                   <div class="grid-item one-third text-center">
@@ -73,18 +73,18 @@
   <script id="ajaxifyQty" type="text/template">
   {% raw %}
     <div class="ajaxifyCart--qty">
-      <input type="text" class="ajaxifyCart--num" value="{{itemQty}}" data-id="{{key}}" min="0" data-line="{{line}}" aria-label="quantity" pattern="[0-9]*">
-      <span class="ajaxifyCart--qty-adjuster ajaxifyCart--add" data-id="{{key}}" data-line="{{line}}" data-qty="{{itemAdd}}">+</span>
-      <span class="ajaxifyCart--qty-adjuster ajaxifyCart--minus" data-id="{{key}}" data-line="{{line}}" data-qty="{{itemMinus}}">-</span>
+      <input type="text" class="ajaxifyCart--num" value="{{itemQty}}" data-id="{{key}}" min="0" data-line="{{line}}" aria-label="quantity" pattern="[0-9]*" readonly>
+      <!-- <span class="ajaxifyCart--qty-adjuster ajaxifyCart--add" data-id="{{key}}" data-line="{{line}}" data-qty="{{itemAdd}}">+</span>
+      <span class="ajaxifyCart--qty-adjuster ajaxifyCart--minus" data-id="{{key}}" data-line="{{line}}" data-qty="{{itemMinus}}">-</span> -->
     </div>
   {% endraw %}
   </script>
   <script id="jsQty" type="text/template">
   {% raw %}
     <div class="js-qty">
-      <input type="text" class="js--num" value="{{itemQty}}" min="1" data-id="{{key}}" aria-label="quantity" pattern="[0-9]*" name="{{inputName}}" id="{{inputId}}">
-      <span class="js--qty-adjuster js--add" data-id="{{key}}" data-qty="{{itemAdd}}">+</span>
-      <span class="js--qty-adjuster js--minus" data-id="{{key}}" data-qty="{{itemMinus}}">-</span>
+      <input type="text" class="js--num" value="{{itemQty}} days" min="1" data-id="{{key}}" aria-label="quantity" pattern="[0-9]*" name="{{inputName}}" id="{{inputId}}" readonly>
+      <!-- <span class="js--qty-adjuster js--add" data-id="{{key}}" data-qty="{{itemAdd}}">+</span>
+      <span class="js--qty-adjuster js--minus" data-id="{{key}}" data-qty="{{itemMinus}}">-</span> -->
     </div>
   {% endraw %}
   </script>
