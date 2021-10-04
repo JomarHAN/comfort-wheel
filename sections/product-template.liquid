@@ -102,7 +102,7 @@
       <meta itemprop="price" content="{{ variant.price | divided_by: 100.00 }}">
 
       <ul class="inline-list product-meta" data-price>
-        <!-- <li>
+        <li>
           <span id="productPrice-{{ section.id }}" class="h1">
             {% include 'price' with variant.price %}
           </span>
@@ -116,7 +116,7 @@
             {% include 'price-sale' %}
           </span>
         </li>
-        {% endif %} -->
+        {% endif %}
         {% if section.settings.product_reviews_enable %}
           <li class="product-meta--review">
             <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
