@@ -1,44 +1,3 @@
-<style>
-  /* Style the buttons that are used to open and close the accordion panel */
-  .accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-  }
-
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  .active, .accordion:hover {
-    background-color: #ccc;
-  }
-
-  .accordion:after {
-    content: '\02795'; /* Unicode character for "plus" sign (+) */
-    font-size: 13px;
-    color: #777;
-    float: right;
-    margin-left: 5px;
-  }
-
-  .active:after {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
-  }
-
-  /* Style the accordion panel. Note: hidden by default */
-  .panel {
-    padding: 0 18px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-  }
-</style>
-
 <div id="ProductSection" data-section-id="{{ section.id }}" data-section-type="product-template" data-zoom-toggle="zoom-in" data-zoom-enabled="{{ section.settings.product_image_zoom_enable }}" data-related-enabled="{{ section.settings.product_related_enable }}" data-social-sharing="{{ section.settings.social_sharing }}" data-show-compare-at-price="{{ section.settings.product_show_compare_at_price }}" data-stock="{{ section.settings.product_quantity_message }}" data-incoming-transfer="{{ section.settings.product_incoming_message }}" data-ajax-cart-method="{{ settings.ajax_cart_method }}">
 {% include 'breadcrumb' %}
 
@@ -246,31 +205,16 @@
       <hr class="{% if section.settings.enable_payment_button %}product-template-hr{% endif %}">
     </div>
 
-    <div class="product-description rte" itemprop="description">
-      {{ product.description }}
-    </div>
-<!-- 
-    <script>
-      console.log({{product | json}})
-    </script> -->
+    <!-- <div class="product-description rte" itemprop="description">
+      {{product.description}}
+    </div> -->
+
+    <!-- Specs&Features Section -->
+      {% render 'product-specs-features-custom'  %}
+    <!-- End Specs&Features Section -->
+
     <!-- Accordion Section -->
-    <div class="product-accordion">
-      <button class="accordion">Safety Rating</button>
-      <div class="panel">
-        <p>{{product.metafields.my_fields.safety_rating.value}}</p>
-      </div>
-
-      <button class="accordion">Technology</button>
-      <div class="panel">
-          {{product.metafields.my_fields.technology}}
-      </div>
-
-      <button class="accordion">Section 3</button>
-      <div class="panel">
-        <p>Lorem ipsum...</p>
-      </div>
-    </div>
-
+      {% render 'product-accordion-custom'%}
     <!-- End Accordion Section -->
 
     {% if section.settings.social_sharing_products %}
@@ -321,20 +265,7 @@
 </div>
 
 <script>
-  var acc = document.getElementsByClassName("accordion");
-  var i;
   
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      }
-    });
-  }
   </script>
 
 
@@ -817,25 +748,6 @@
             "zh-CN": "大",
             "zh-TW": "大型"
           }
-        }
-      ]
-    }
-  ],
-  "blocks":[
-    {
-      "type": "accordion_tab",
-      "name": "Accordion Info",
-      "settings":[
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Heading",
-          "default": "Type Heading here"
-        },
-        {
-          "type": "richtext",
-          "id": "product_info",
-          "label": "Content"
         }
       ]
     }

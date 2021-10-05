@@ -1,0 +1,48 @@
+<div class="product__specs">
+    <div class="product__specs-item">
+      {% render 'icon-safety'%}
+      <div class="product__specs-content">
+        <h6 class="product__specs-category"><b>Safety Rating</b></h6>
+        <p class="product__specs-detail"><i>{{product.metafields.my_fields.safety_rating.value}} out of 5.0</i></p>
+      </div>
+    </div>
+    <div class="product__specs-item">
+      {% render 'icon-max-seating'%}
+      <div class="product__specs-content">
+        <h6 class="product__specs-category"><b>Seating Capacity</b></h6>
+        <p class="product__specs-detail"><i>{{product.metafields.my_fields.seating_capacity.value}}</i></p>
+      </div>
+    </div>
+  </div>
+  <div class="product__specs">
+    <div class="product__specs-item">
+      {% render 'icon-fuel-gas'%}
+      <div class="product__specs-content">
+        <h6 class="product__specs-category"><b>Fuel Economy</b></h6>
+        <p class="product__specs-detail"><i>{{product.metafields.my_fields.fuel_economy}}</i></p>
+      </div>
+    </div>
+    <div class="product__specs-item">
+      {% render 'icon-car-drivetrain'%}
+      <div class="product__specs-content">
+        <h6 class="product__specs-category"><b>Drive Train</b></h6>
+        <p class="product__specs-detail"><i>{{product.metafields.my_fields.drivetrain}}</i></p>
+      </div>
+    </div>
+  </div>
+  <div class="product__specs">
+    <div class="product__specs-item">
+      {% render 'icon-car-engine'%}
+      <div class="product__specs-content">
+        <h6 class="product__specs-category"><b>Engine</b></h6>
+        <p class="product__specs-detail"><i>{{product.metafields.my_fields.engine}}</i></p>
+      </div>
+    </div>
+    <div class="product__specs-item">
+      {% render 'icon-horse-power'%}
+      <div class="product__specs-content">
+        <h6 class="product__specs-category"><b>Horsepower</b></h6>
+        <p class="product__specs-detail"><i>{{product.metafields.my_fields.horsepower}}</i></p>
+      </div>
+    </div>
+  </div>
