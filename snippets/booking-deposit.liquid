@@ -1,0 +1,106 @@
+<script>
+    BookingDeposit = function() {
+      var _this = this;
+      
+      _this.cart = {{ cart | json }};
+      _this.depositProduct = {{ all_products['deposit'] | json }};
+      _this.depositTags = [];
+      _this.depositItemUpdates = {}; // deposit variant id => quantity
+      _this.depositItemQuantities = {}; // deposit variant id => quantity
+      
+      this.init = function() {
+        if (_this.depositProduct.error) {
+          alert('Product with handle "deposit" not found');
+        }
+        
+        _this.initData();
+        _this.collectDepositUpdates();
+        
+        if (!_this.depositItemsMatch()) {
+          _this.addDepositItemsToCart().done(function(cart) {
+            location.href = '/cart';
+          });
+        }
+      };
+      
+      this.collectDepositUpdates = function() {
+        for (var i = 0; i < _this.depositTags.length; i++) {
+          var depositTag = _this.depositTags[i],
+              tag = depositTag.tag.substr(9), // remove 'Deposit: ' part
+              qty = depositTag.qty,
+              depositVariantId = _this.findDepositVariantFromTag(tag);
+          
+          if (depositVariantId) {
+            _this.depositItemUpdates[depositVariantId] = 1;
+          }
+        }
+      }; 
+      
+      this.findDepositVariantFromTag = function(tag) {
+        for (var i = 0; i < _this.depositProduct.variants.length; i++) {
+          var variant = _this.depositProduct.variants[i];
+          if (variant.title == tag) {
+            return variant.id;
+          }
+        }
+      };
+      
+      this.depositItemsMatch = function() {
+        var result = true;
+        
+        $.each(_this.depositItemUpdates, function(updateId, newQty) {
+          var found = false,
+              qtyMatch = false;
+          $.each(_this.depositItemQuantities, function(existingId, oldQty) {
+            if (updateId == existingId) {
+              found = true;
+              qtyMatch = newQty == oldQty;
+              return false; // found it
+            }
+          });
+          
+          result = (found && qtyMatch) || (!found && newQty == 0);
+          
+          return result; // quit iterating as soon as an item doesn't match
+        });
+        
+        return result;
+      };
+      
+      this.addDepositItemsToCart = function() {
+        return $.ajax({
+          type: 'POST',
+          url: '/cart/update.js', // will add if it doesn't exist yet
+          data: {updates: _this.depositItemUpdates}, 
+          dataType: 'json'
+        });
+      }
+      
+      this.initData = function() {
+        // initialize deposit item update quantities
+        for (var x = 0; x < _this.depositProduct.variants.length; x++) {
+         _this.depositItemUpdates[_this.depositProduct.variants[x].id] = 0; 
+        }
+        
+        // find deposit tags and associated quantity
+        {% for item in cart.items %}
+          {%- if item.product.handle == 'deposit' -%}
+            _this.depositItemQuantities[{{ item.id }}] = {{ item.quantity }};
+          {%- else -%}
+            {%- for tag in item.product.tags -%}
+              {%- if tag contains 'Deposit: ' -%}
+                _this.depositTags.push({tag: '{{ tag }}', qty: {{ item.quantity }} }); // or simply qty: 1
+                {%- break -%}                  
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+        {% endfor %}
+      }
+      
+      this.init();
+    }
+          
+    document.addEventListener("DOMContentLoaded", function(event) { 
+      new BookingDeposit();
+    });
+  </script>
