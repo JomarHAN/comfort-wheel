@@ -5,12 +5,22 @@
     <div class="panel">
         {% for tec in techlist %}
         <p>- {{tec}}</p>
-        {% endfor %}
+    {% endfor %}
     </div>
     <button class="accordion">Entertainment</button>
     <div class="panel">
     {% for e in entertainList %}
         <p>- {{e}}</p>
+    {% endfor %}
+    </div>
+    <button class="accordion">Deposit & Refund</button>
+    <div class="panel">
+        {% for tag in product.tags %}
+            {% if tag contains "Deposit" %}
+                {% assign deposit_amount = tag | split: "Deposit: " %}
+                <p>- Deposit <b><i>${{deposit_amount}}</i></b> when picking up this vehicle</p>
+                <p>- Get back the Refund Amount <b><i>${{deposit_amount}}</i></b> after this vehicle was returned</p>
+            {% endif %}
         {% endfor %}
     </div>
 </div>
