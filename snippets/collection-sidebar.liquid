@@ -76,7 +76,7 @@
     {% endcomment %}
     <ul>
       {%- if current_tags -%}
-        <li class="active-filter">
+        <li class="">
           {% comment %}
             Good for /collections/all collection and regular collections
           {% endcomment %}
@@ -128,11 +128,13 @@
         {% endunless %}
 
         {% if is_advanced_tag == false %}
-          {% if current_tags contains tag %}
-            <li class="active-filter">{{ tag }}</li>
-          {% else %}
-            <li>{{ tag | link_to_tag: tag }}</li>
-          {% endif %}
+          {% unless tag contains "Deposit: " or collection.title == tag%}
+              {% if current_tags contains tag %}
+                <li class="active-filter">{{ tag }}</li>
+              {% else %}
+                <li>{{ tag | link_to_tag: tag }}</li>
+              {% endif %}
+          {% endunless %}
         {% endif %}
       {% endfor %}
 
