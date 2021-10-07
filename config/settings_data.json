@@ -1,20 +1,20 @@
 {
   "current": {
-    "color_primary": "#528ec1",
-    "color_secondary": "#dcdcdc",
-    "color_accent": "#dd2525",
+    "color_primary": "#003459",
+    "color_secondary": "#003459",
+    "color_accent": "#003459",
     "color_body_bg": "#fff",
-    "color_borders": "#ececec",
-    "color_header_background": "#182e49",
+    "color_borders": "#011a51",
+    "color_header_background": "#bfdbf7",
     "color_header_text": "#fff",
-    "color_header_cart_search": "#0f243d",
-    "color_nav_bg": "#182e49",
+    "color_header_cart_search": "#003459",
+    "color_nav_bg": "#003459",
     "color_nav_text": "#fff",
-    "color_body_text": "#585858",
-    "color_heading_text": "#000",
-    "color_footer_bg": "#f2f2f2",
-    "color_footer_text": "#636363",
-    "color_footer_social_link": "#bbbbbb",
+    "color_body_text": "#003459",
+    "color_heading_text": "#011a51",
+    "color_footer_bg": "#bfdbf7",
+    "color_footer_text": "#003459",
+    "color_footer_social_link": "#d9d9d9",
     "type_base_font": "montserrat_n5",
     "type_base_size": "13px",
     "type_header_font": "montserrat_n7",
@@ -47,7 +47,8 @@
         "type": "header",
         "settings": {
           "menu": "main-menu",
-          "logo_max_width": "305",
+          "logo": "shopify:\/\/shop_images\/comfort-wheel-desktop.png",
+          "logo_max_width": "200",
           "show_announcement": false,
           "announcement_text": "Announce something here",
           "announcement_link": ""
@@ -59,17 +60,17 @@
           "menu": {
             "type": "menu",
             "settings": {
-              "title": "Quick links",
-              "menu": "",
-              "width": "16%"
+              "title": "policy",
+              "menu": "footer",
+              "width": "33%"
             }
           },
           "text": {
             "type": "text",
             "settings": {
               "title": "Get in touch",
-              "richtext": "<p>Use this text to share information about your brand with your customers.<\/p>",
-              "width": "50%"
+              "richtext": "<p>Comfort Wheel LLC<\/p><p>Add: 123 Test Dr, Test, FL 90090.<\/p><p>Tel: 470-098-1234<\/p><p>Email: support@comfortwheel.com<\/p>",
+              "width": "33%"
             }
           },
           "newsletter": {
@@ -98,29 +99,40 @@
           "slide-0": {
             "type": "image",
             "settings": {
-              "link": ""
+              "slide": "shopify:\/\/shop_images\/1609786770_job_CLIENT_MODEL_HERO.jpg",
+              "link": "shopify:\/\/products\/2021-audi-q8"
             }
           },
           "slide-1": {
             "type": "image",
             "settings": {
-              "link": ""
+              "slide": "shopify:\/\/shop_images\/2022-toyota-camry-banner.jpg",
+              "link": "shopify:\/\/products\/2022-toyota-camry"
             }
           },
           "slide-2": {
             "type": "image",
             "settings": {
-              "link": ""
+              "slide": "shopify:\/\/shop_images\/5J8k9sAsRZeKuK1v96St_2021-Ford-F-150-Webpage-Banner-1920x600.jpg",
+              "link": "shopify:\/\/products\/2021-ford-f150-supercrew-cab"
+            }
+          },
+          "dd511e9d-e031-4300-b2d4-79fe0b7e087c": {
+            "type": "image",
+            "settings": {
+              "slide": "shopify:\/\/shop_images\/2021-Chevrolet-Camaro-Wild-Cherry-Design-Package-02.jpg",
+              "link": "shopify:\/\/products\/2022-chevrolet-camaro"
             }
           }
         },
         "block_order": [
           "slide-0",
           "slide-1",
-          "slide-2"
+          "slide-2",
+          "dd511e9d-e031-4300-b2d4-79fe0b7e087c"
         ],
         "settings": {
-          "slider_home_auto": false,
+          "slider_home_auto": true,
           "slider_home_rate": "5000"
         }
       },
@@ -130,51 +142,22 @@
           "collection-list-0": {
             "type": "collection",
             "settings": {
-              "collection": ""
-            }
-          },
-          "collection-list-1": {
-            "type": "collection",
-            "settings": {
-              "collection": ""
+              "collection": "all-vehicles"
             }
           }
         },
         "block_order": [
-          "collection-list-0",
-          "collection-list-1"
+          "collection-list-0"
         ],
         "settings": {}
       },
       "collection-row-1": {
         "type": "collection-rows",
         "settings": {
-          "title": "Featured collection",
-          "home_featured_row": "",
+          "title": "All Vehicles",
+          "home_featured_row": "all-vehicles",
           "grid": 4,
-          "rows": 1,
-          "product_show_saved_amount": true,
-          "product_show_compare_at_price": false
-        }
-      },
-      "collection-row-2": {
-        "type": "collection-rows",
-        "settings": {
-          "title": "Featured collection",
-          "home_featured_row": "",
-          "grid": 4,
-          "rows": 1,
-          "product_show_saved_amount": true,
-          "product_show_compare_at_price": false
-        }
-      },
-      "collection-row-3": {
-        "type": "collection-rows",
-        "settings": {
-          "title": "Featured collection",
-          "home_featured_row": "",
-          "grid": 4,
-          "rows": 1,
+          "rows": 2,
           "product_show_saved_amount": true,
           "product_show_compare_at_price": false
         }
@@ -202,19 +185,16 @@
           "grid": "4",
           "rows": "6",
           "collection_sidebar_filters": "tags",
-          "product_show_compare_at_price": false,
+          "product_show_compare_at_price": true,
           "product_show_saved_amount": true,
-          "product_reviews_enable": false,
+          "product_reviews_enable": true,
           "enable_sidebar": true
         }
       }
     },
     "content_for_index": [
       "slideshow",
-      "collection-list",
-      "collection-row-1",
-      "collection-row-2",
-      "collection-row-3"
+      "collection-row-1"
     ]
   },
   "presets": {
