@@ -1,7 +1,3 @@
-<script>
-  console.log({{product | json}})
-</script>
-
 {% if cart.item_count > 0 %}
   <form action="{{ routes.cart_url }}" method="post" class="cart-form" data-cart-form novalidate>
 
