@@ -1,0 +1,16 @@
+{% assign newArray = false %}
+{% for product in collections[collections_chosen].products %}
+    {% assign review_info = product.metafields.reviews.rating.value | default: 0.0 %}
+    {% assign matrix = review_info | append:'-' | append:forloop.index0 %}
+    {% if newArray %}
+        {% assign tmpIndex = matrix | split:',' %}
+        {% assign newArray = newArray | concat: tmpIndex %}
+    {% else %}
+        {% assign newArray = matrix | split:',' %}
+    {% endif %}
+{% endfor %}
+{% assign newArray = newArray | sort | reverse %}
+{% for item in newArray limit: product_limit %}
+    {% assign i = item | split:'-' | last %}
+    {% include 'product-grid-item' product: collections[collections_chosen].products[i] %}
+{% endfor %}

@@ -1,3 +1,4 @@
+
 <hr>
 <div id="collection-rows--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="collection-row-section">
 {% assign featured_row = section.settings.home_featured_row %}
@@ -44,10 +45,15 @@
   {% endif %}
 
   <div class="grid-uniform row-negative-bottom">
-    {% for product in collections[featured_row].products limit: product_limit %}
-      {% assign current_collection = collections[featured_row] %}
+    {% if section.settings.sort_by_review %}
+
+      {% include 'sort-by-review-custom' collections_chosen: featured_row %}
+    {%else%}
+      {% for product in collections[featured_row].products limit: product_limit %}
+        {% assign current_collection = collections[featured_row] %}
         {% include 'product-grid-item' %}
-    {% endfor %}
+      {% endfor %}
+    {% endif %}
   </div>
 
 {% else %}
@@ -73,6 +79,10 @@
   </div>
 {% endif %}
 </div>
+
+
+
+
 
 
 {% schema %}
@@ -295,6 +305,12 @@
         "zh-CN": "显示原价",
         "zh-TW": "顯示售價"
       },
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "sort_by_review",
+      "label": "Sort by review",
       "default": false
     }
   ],
