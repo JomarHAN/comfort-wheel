@@ -1,8 +1,8 @@
 {
   "current": {
     "color_primary": "#003459",
-    "color_secondary": "#003459",
-    "color_accent": "#003459",
+    "color_secondary": "#0361a4",
+    "color_accent": "#0361a4",
     "color_body_bg": "#fff",
     "color_borders": "#011a51",
     "color_header_background": "#bfdbf7",
@@ -41,6 +41,9 @@
     "share_twitter": true,
     "share_pinterest": true,
     "superscript_decimals": true,
+    "checkout_logo_image": "shopify:\/\/shop_images\/comfort-wheel-desktop.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "large",
     "collection_sidebar_filters": "tags",
     "sections": {
       "header": {
@@ -120,8 +123,8 @@
           "dd511e9d-e031-4300-b2d4-79fe0b7e087c": {
             "type": "image",
             "settings": {
-              "slide": "shopify:\/\/shop_images\/2021-Chevrolet-Camaro-Wild-Cherry-Design-Package-02.jpg",
-              "link": "shopify:\/\/products\/2022-chevrolet-camaro"
+              "slide": "shopify:\/\/shop_images\/2021-porche-718-cayman-banner.jpg",
+              "link": "shopify:\/\/products\/2021-porsche-718-cayman"
             }
           }
         },
@@ -151,17 +154,6 @@
         ],
         "settings": {}
       },
-      "collection-row-1": {
-        "type": "collection-rows",
-        "settings": {
-          "title": "All Vehicles",
-          "home_featured_row": "all-vehicles",
-          "grid": 4,
-          "rows": 2,
-          "product_show_saved_amount": true,
-          "product_show_compare_at_price": false
-        }
-      },
       "product-template": {
         "type": "product-template",
         "settings": {
@@ -190,11 +182,131 @@
           "product_reviews_enable": true,
           "enable_sidebar": true
         }
+      },
+      "1633904126770bbd2c": {
+        "type": "collection-rows",
+        "settings": {
+          "title": "All Vehicles",
+          "home_featured_row": "all-vehicles",
+          "grid": 4,
+          "rows": 1,
+          "product_show_saved_amount": true,
+          "product_show_compare_at_price": false,
+          "sort_by_review": false
+        }
+      },
+      "1633904130853fb51c": {
+        "type": "collection-rows",
+        "settings": {
+          "title": "the most 5 trending",
+          "home_featured_row": "all-vehicles",
+          "grid": 5,
+          "rows": 1,
+          "product_show_saved_amount": true,
+          "product_show_compare_at_price": false,
+          "sort_by_review": true
+        }
+      },
+      "1633983212b3bae135": {
+        "type": "vendor-list-section",
+        "blocks": {
+          "a4933225-d4f9-469b-b245-1fc35cf6636c": {
+            "type": "collection",
+            "settings": {
+              "link_collection": "audi"
+            }
+          },
+          "4e5e9f4d-d1b5-4cfd-bd27-d053068f855d": {
+            "type": "collection",
+            "settings": {
+              "link_collection": "chevrolet"
+            }
+          },
+          "d0061d5d-7d94-4dc1-a89f-1341fbd914c4": {
+            "type": "collection",
+            "settings": {
+              "link_collection": "ford"
+            }
+          },
+          "966966d0-4689-4162-a3a6-22f935285665": {
+            "type": "collection",
+            "settings": {
+              "link_collection": "honda"
+            }
+          },
+          "2c41362e-fc13-4ace-a1dc-73adb383e7e0": {
+            "type": "collection",
+            "settings": {
+              "link_collection": "hyundai"
+            }
+          },
+          "4853f44e-216e-4b5d-bb6c-2559e118c6da": {
+            "type": "collection",
+            "settings": {
+              "link_collection": "jaguar"
+            }
+          },
+          "a26e4e7e-de2e-4ef2-9ae3-afb284b9d3c9": {
+            "type": "collection",
+            "settings": {
+              "link_collection": "kia"
+            }
+          },
+          "c59b837f-988d-4d56-85ee-317c9412f55f": {
+            "type": "collection",
+            "settings": {
+              "link_collection": "lexus"
+            }
+          },
+          "1a73c8f7-8549-4505-83ab-8e87c4d44392": {
+            "type": "collection",
+            "settings": {
+              "link_collection": "mercides-benz"
+            }
+          },
+          "802729de-0e26-474f-ba4f-b10430931443": {
+            "type": "collection",
+            "settings": {
+              "link_collection": "porsche"
+            }
+          },
+          "cbab966f-c39a-44d4-b341-40f3a868ae22": {
+            "type": "collection",
+            "settings": {
+              "link_collection": "ram"
+            }
+          }
+        },
+        "block_order": [
+          "a4933225-d4f9-469b-b245-1fc35cf6636c",
+          "4e5e9f4d-d1b5-4cfd-bd27-d053068f855d",
+          "d0061d5d-7d94-4dc1-a89f-1341fbd914c4",
+          "966966d0-4689-4162-a3a6-22f935285665",
+          "2c41362e-fc13-4ace-a1dc-73adb383e7e0",
+          "4853f44e-216e-4b5d-bb6c-2559e118c6da",
+          "a26e4e7e-de2e-4ef2-9ae3-afb284b9d3c9",
+          "c59b837f-988d-4d56-85ee-317c9412f55f",
+          "1a73c8f7-8549-4505-83ab-8e87c4d44392",
+          "802729de-0e26-474f-ba4f-b10430931443",
+          "cbab966f-c39a-44d4-b341-40f3a868ae22"
+        ],
+        "settings": {
+          "title": "Vehicle's Brand"
+        }
+      },
+      "163406733243d36483": {
+        "type": "contact-section-custom",
+        "settings": {
+          "title": "contact us now for any question"
+        }
       }
     },
     "content_for_index": [
       "slideshow",
-      "collection-row-1"
+      "1633904126770bbd2c",
+      "1633904130853fb51c",
+      "1633983212b3bae135",
+      "163406733243d36483"
     ]
   },
   "presets": {
