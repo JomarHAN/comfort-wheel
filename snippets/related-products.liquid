@@ -14,7 +14,7 @@
 
 {% if collection and collection.products_count > 1 %}
   <hr>
-  <h2 class="h1">{{ 'products.general.related_products' | t }}</h2>
+  <h2 class="h1">{{ 'products.general.related_products' | t }} {{product.type}}</h2>
   <div class="grid-uniform">
     {% assign current_product = product %}
     {% assign current_product_found = false %}

@@ -299,7 +299,7 @@
   },
   "products": {
     "general": {
-      "related_products": "We Also Recommend",
+      "related_products": "Others ",
       "save_html": "Save {{ saved_amount }}",
       "sale_price": "Sale price",
       "regular_price": "Regular price",

@@ -228,6 +228,19 @@
   {% include 'related-products' %}
 {% endif %}
 
+
+  {% for block in section.blocks %}
+    <hr>
+    {% assign grid_item_width = 'large--one-fifth medium--one-third small--one-half' %}
+    {% if block.settings.title != blank %}
+        <div class="section-header">
+            <p class="h1 section-header--left">{{ block.settings.title | escape }}</p>
+        </div>
+    {% endif %}
+    {% include 'sort-by-review-custom' collections_chosen: block.settings.recommend_collection product_limit:5 %}
+  {% endfor %}
+
+
 {% if section.settings.product_reviews_enable %}
   <hr>
   <div id="shopify-product-reviews" data-id="{{ product.id }}">{{ product.metafields.spr.reviews }}</div>
@@ -749,6 +762,31 @@
           }
         }
       ]
+    }
+  ],
+  "blocks":[
+    {
+      "name": "Recommendation Custom",
+      "type": "collection",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Title Here"
+        },
+        {
+          "type": "collection",
+          "id": "recommend_collection",
+          "label": "Pick a Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Recommendation",
+      "name":"Recommendation Custom"
     }
   ]
 }
