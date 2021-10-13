@@ -18,7 +18,7 @@
   <div class="grid-uniform">
     {% assign current_product = product %}
     {% assign current_product_found = false %}
-    {% for product in collection.products limit: number_of_products_to_fetch %}
+    {% for product in collections[current_product.type].products limit: number_of_products_to_fetch %}
       {% if product.handle == current_product.handle %}
         {% assign current_product_found = true %}
       {% else %}
@@ -29,3 +29,4 @@
     {% endfor %}
   </div>
 {% endif %}
+
