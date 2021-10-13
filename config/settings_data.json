@@ -156,6 +156,18 @@
       },
       "product-template": {
         "type": "product-template",
+        "blocks": {
+          "225636ae-5e00-47f0-ab3a-733d85fe7250": {
+            "type": "collection",
+            "settings": {
+              "title": "the most 5 trending",
+              "recommend_collection": "all-vehicles"
+            }
+          }
+        },
+        "block_order": [
+          "225636ae-5e00-47f0-ab3a-733d85fe7250"
+        ],
         "settings": {
           "product_image_zoom_enable": true,
           "product_quantity_enable": false,
